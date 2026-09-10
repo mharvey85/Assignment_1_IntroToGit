@@ -1,43 +1,44 @@
 #include <stdio.h>
 #include <math.h>
 
-int sum (double a[], double size){
-	int sum = 0;
+double sum (double a[], double size){
+	double sum = 0;
 
 	for (int i = 0; i <= size; i++){
-		return sum += a[i]; 
+		sum += a[i]; 
 	}
+	return sum;
 }
 
-double avg (double a[], double size){
+double average (double a[], double size){
 	double avg = 0;	
-	return avg = sum(a, size)/size; 
+	return avg = sum(a, size) / size; 
 }
 
 double stdDev (double a[], double size){
-	double arrAverage = avg(a, size);
-	
-	return 0;
+	double avg1 = average(a, size);
+	double sum = 0;
+	double square = 0; 
+	double stdDev = 0;
+
+	for (int i = 0; i < size; i++){
+		square = pow((a[i] - avg1), 2);
+		sum += (square);
+	}
+	return stdDev = sqrt(sum / size);
 }
 
 int main (){
 	double numA[5] = {1.0, 2.0, 3.0, 4.0, 5.0};
-	double aSize = sizeof(numA) / sizeof (double);
+	double numB[7] = {3, 7, 1, 9, 2, 6, 0};
 	
-	//printing array?
+	double arrSize = sizeof(numB) / sizeof(numB[0]);
+	
 	printf("\n");
 	printf("Printing out the output for Intro Assignment\n");
-	
-	for (int i = 0; i < aSize; i++){
-		printf("numA[%d]: %.2lf\n", i, numA[i]);
-	}
-
-	printf("sizeA: %.0lf\n", aSize);
-	printf("Sum: %.2lf\n", sum(numA, aSize));
-	printf("Average: %.2lf\n", avg(numA, aSize));
-
-	int numB[3] = {10,20,30};
-	int numC[7] = {3,7,1,9,2,6,0};
+	printf("Sum: %.2lf\n", sum(numB, arrSize));
+	printf("Average: %.2lf\n", average(numB, arrSize));
+	printf("Standard Deviation: %.2lf\n\n", stdDev(numB, arrSize));
 	return 0; 
 }
 
