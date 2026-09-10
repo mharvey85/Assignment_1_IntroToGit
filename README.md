@@ -9,8 +9,8 @@ Make a simple program that contains a main.c file and create multiple functions 
 +-------------------+
 ./main
 the average is: x		|	
-the std is: x				|
-the sum is: x				|
+the std is: x		|
+the sum is: x		|
 +-------------------+
 ```
 
